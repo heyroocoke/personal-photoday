@@ -1,45 +1,35 @@
-name: deploy
-
+name: client
 on:
   push:
     branches:
       - main
-
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@master
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-master-build-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
-
-      - name: Install Dependencies
+      - name: Checkout source code.
+        uses: actions/checkout@v2
+      - name: Install dependencies
         run: yarn
         working-directory: ./client
-
-      - name: Build
-        run: yarn build
+      - name: Generate Environment Variables File for Production
+        run: |
+          echo "VITE_APP_API=$VITE_APP_API" >> .env
+          echo "VITE_GOOGLE_AUTH_URL=$VITE_GOOGLE_AUTH_URL" >> .env
         env:
           VITE_APP_API: ${{ secrets.VITE_APP_API }}
           VITE_GOOGLE_AUTH_URL: ${{ secrets.VITE_GOOGLE_AUTH_URL }}
-          CI: ''
+      - name: Build
+        run: yarn build
         working-directory: ./client
-
-      - name: Deploy
+      - name: Sync Bucket
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_EC2_METADATA_DISABLED: true
         run: |
-          aws s3 cp \
-            --recursive \
+          aws s3 sync \
             --region ap-northeast-2 \
-            dist s3://todayphotoday 
-                working-directory: ./client
+            build s3://photoday.site \
+            --delete
+        working-directory: ./client
