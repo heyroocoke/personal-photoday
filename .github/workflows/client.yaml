@@ -31,7 +31,7 @@ jobs:
           VITE_APP_API: ${{ secrets.VITE_APP_API }}
           VITE_GOOGLE_AUTH_URL: ${{ secrets.VITE_GOOGLE_AUTH_URL }}
           CI: ''
-        working-directory: ./client //[프론트 폴더 경로]
+        working-directory: ./client
 
       - name: Deploy
         env:
@@ -41,5 +41,5 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            dist s3://todayphotoday //[s3 버킷 폴더 명]
-                working-directory: ./client  //[프론트 폴더 경로]
+            dist s3://todayphotoday 
+                working-directory: ./client
