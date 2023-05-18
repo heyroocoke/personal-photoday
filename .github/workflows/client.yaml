@@ -1,4 +1,4 @@
-name: client
+name: client1
 on:
   push:
     branches:
