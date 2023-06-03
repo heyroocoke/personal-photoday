@@ -31,6 +31,10 @@ export const S_FileBox = styled.div`
   align-items: center;
 
   border: 3px dotted #ccc;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const S_UploadBottom = styled.div`
