@@ -44,11 +44,18 @@ export const S_UploadBottom = styled.div`
   padding-top: 40px;
 
   width: 930px;
+
+  @media screen and (max-width: 1024px) {
+    ${ColFlex}
+  }
 `;
 
 export const S_TagContainer = styled.div`
   ${ColFlex}
   justify-content: flex-start;
+  @media screen and (max-width: 1024px) {
+    align-items: center;
+  }
 `;
 export const S_TagInput = styled.input`
   width: 500px;
@@ -70,6 +77,10 @@ export const S_TagInput = styled.input`
 
   ::placeholder {
     color: var(--color-primary-gray20);
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
   }
 `;
 
