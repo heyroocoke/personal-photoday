@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Container, ContainerWrap } from '../../styles/Layout';
-import SearchBar from '../../components/common/SearchBar/SearchBar';
+import { Container, ContainerWrap } from '@styles/Layout';
+import SearchBar from '@components/common/SearchBar/SearchBar';
 import {
   S_MainContentBox,
   S_MainTextBox,
@@ -8,11 +8,11 @@ import {
   S_SearchImgBox,
   S_MainTitle,
 } from './Main.styles';
-import ImageCardList from '../../components/common/ImageCardList/ImageCardList';
+import ImageCardList from '@components/common/ImageCardList/ImageCardList';
 import { useDispatch } from 'react-redux';
-import { login } from '../../store/authSlice';
-import { socialLogin } from '../../api/Login';
-import MainImageCard from '../../components/common/ImageCard/MainImageCard';
+import { login } from '@store/authSlice';
+import { socialLogin } from '@api/Login';
+import MainImageCard from '@components/common/ImageCard/MainImageCard';
 
 function Main() {
   const dispatch = useDispatch();

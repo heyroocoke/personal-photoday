@@ -3,7 +3,7 @@ import {
   S_ImgContainer,
   S_ContentSection,
 } from '../Login/Login.styles';
-import AccountRecoverySection from '../../components/AccountRecovery/AccountRecoverySection';
+import AccountRecoverySection from '@components/AccountRecovery/AccountRecoverySection';
 
 function AccountRecovery() {
   return (

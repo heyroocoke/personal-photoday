@@ -3,7 +3,7 @@ import {
   S_ContentSection,
   S_LoginContainer,
 } from '../Login/Login.styles';
-import SignupSection from '../../components/Signup/SignupSection/SignupSection';
+import SignupSection from '@components/Signup/SignupSection/SignupSection';
 
 function Signup() {
   return (

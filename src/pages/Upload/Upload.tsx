@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Button from '../../components/common/Button/Button';
-import { Container, ContainerWrap } from '../../styles/Layout';
+import Button from '@components/common/Button/Button';
+import { Container, ContainerWrap } from '@styles/Layout';
 import {
   S_FileBox,
   S_TagInput,
@@ -16,7 +16,7 @@ import {
   S_FileSizeWarning,
   S_FileSizePreview,
 } from './Upload.styles';
-import TagList from '../../components/Upload/Tag/TagList';
+import TagList from '@components/Upload/Tag/TagList';
 import axios from 'axios';
 
 export type UploadImage = {

@@ -1,7 +1,7 @@
-import { ContainerWrap } from '../../styles/Layout';
-import SelectBox from '../../components/common/SelectBox/SelectBox';
-import ImageCardList from '../../components/common/ImageCardList/ImageCardList';
-import TagList from '../../components/Upload/Tag/TagList';
+import { ContainerWrap } from '@styles/Layout';
+import SelectBox from '@components/common/SelectBox/SelectBox';
+import ImageCardList from '@components/common/ImageCardList/ImageCardList';
+import TagList from '@components/Upload/Tag/TagList';
 import {
   S_SearchBox,
   S_SearchContainer,

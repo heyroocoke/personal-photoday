@@ -18,4 +18,14 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    alias: [
+      { find: '@components', replacement: '/src/components' },
+      { find: '@', replacement: '/src' },
+      { find: '@styles', replacement: '/src/styles' },
+      { find: '@api', replacement: '/src/api' },
+      { find: '@store', replacement: '/src/store' },
+      { find: '@context', replacement: '/src/context' },
+    ],
+  },
 });

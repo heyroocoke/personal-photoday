@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Container, ContainerWrap } from '../../styles/Layout';
 import Button from '../../components/common/Button/Button';
 import { FaHeart, FaBookmark } from 'react-icons/fa';
-import { FiUserPlus, FiUserCheck, FiUserMinus } from 'react-icons/fi';
+import { FiUserPlus, FiUserMinus } from 'react-icons/fi';
 import { GrView } from 'react-icons/gr';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import {
@@ -20,15 +20,15 @@ import {
   S_TagWrap,
   S_TagEditInput,
 } from './Detail.styles';
-import TagList from '../../components/Upload/Tag/TagList';
-import ImageCardList from '../../components/common/ImageCardList/ImageCardList';
+import TagList from '@components/Upload/Tag/TagList';
+import ImageCardList from '@components/common/ImageCardList/ImageCardList';
 import DetailModal from './DetailModal';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Tags } from '../Upload/Upload';
-import { SearchContext } from '../../context/SearchContext';
-import { PageNumContext } from '../../context/PageNumContext';
-import { ItemContext } from '../../context/ItemContext';
+import { SearchContext } from '@context/SearchContext';
+import { PageNumContext } from '@context/PageNumContext';
+import { ItemContext } from '@context/ItemContext';
 import MainImageLoding from './MainImageLoding';
 
 type DetailInfo = {
